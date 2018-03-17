@@ -1080,6 +1080,16 @@ be extended to contain full lines."
   :type 'boolean)
 (make-variable-buffer-local 'evil-symbol-word-search)
 
+(defcustom evil-search-symbol-expr "\\_<%s\\_>"
+  "Regular expression used by * and # when searching for symbols."
+  :group 'evil
+  :type 'regexp)
+
+(defcustom evil-search-word-expr "\\<%s\\>"
+  "Regular expression used by * and # when searching for words."
+  :group 'evil
+  :type 'regexp)
+
 (defcustom evil-magic t
   "Meaning which characters in a pattern are magic.
 The meaning of those values is the same as in Vim. Note that it

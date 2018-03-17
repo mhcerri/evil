@@ -281,7 +281,8 @@ otherwise for the word at point."
         (setq string (regexp-quote string)))
        (t
         (setq string
-              (format (if symbol "\\_<%s\\_>" "\\<%s\\>")
+              (format (if symbol evil-search-symbol-expr
+                        evil-search-word-expr)
                       (regexp-quote string)))))
       (evil-push-search-history string forward)
       (evil-search string forward t)))))
@@ -1125,7 +1126,8 @@ point."
         (user-error "No word under point")
       (let ((regex (if unbounded
                        (regexp-quote string)
-                     (format (if symbol "\\_<%s\\_>" "\\<%s\\>")
+                     (format (if symbol evil-search-symbol-expr
+                               evil-search-word-expr)
                              (regexp-quote string)))))
         (setq evil-ex-search-count count
               evil-ex-search-direction direction
